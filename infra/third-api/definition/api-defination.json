@@ -1,0 +1,40 @@
+{
+  "baseUrl": "",
+  "apiProtocol": "?",
+  "isEncryptionUsed": "?",
+  "encryptionAlgorithm": "?",
+  "apiList": [
+    {
+      "url": "?",
+      "method": "?",
+      "requestParams": [
+        {
+          "name": "?",
+          "description": "?",
+          "dateType": "?",
+          "isRequired": "?",
+          "defaultValue": "?",
+          "example": "?",
+          "remark": "?",
+          "children": [
+
+          ]
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "?",
+          "description": "?",
+          "dateType": "?",
+          "isRequired": "?",
+          "defaultValue": "?",
+          "example": "?",
+          "remark": "?",
+          "children": [
+
+          ]
+        }
+      ]
+    }
+  ]
+}

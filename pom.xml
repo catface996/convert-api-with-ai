@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.catface996.ai</groupId>
+    <artifactId>convert-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>convert-api</name>
+    <description>convert-api</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <modules>
+
+        <module>app/app-demo</module>
+
+        <module>traffic/http-api-impl</module>
+
+        <!-- domain begin -->
+        <module>domain/business</module>
+        <module>domain/business-impl</module>
+        <module>domain/third-api</module>
+        <module>domain/repository</module>
+        <module>domain/model</module>
+        <!-- domain end -->
+
+        <!-- infra begin -->
+
+        <!-- ## third api begin ## -->
+        <module>infra/third-api//third-api-abc-impl</module>
+        <module>infra/third-api//third-api-xyz-impl</module>
+        <!-- ## third api end ## -->
+
+        <!-- ## third repository begin ## -->
+        <module>infra/repository/repository-mysql-impl</module>
+        <module>infra/repository/repository-mongodb-impl</module>
+        <!-- ## third repository emd ## -->
+
+        <!-- infra end -->
+    </modules>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>23</java.version>
+        <spring-cloud.version>2024.0.0</spring-cloud.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--## local modules begin ##-->
+
+            <!-- domain scope begin -->
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>business</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>business-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>third-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- domain scope end -->
+
+            <!-- traffic begin -->
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>http-api-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- traffic end -->
+
+            <!-- infra begin -->
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>third-api-abc-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>third-api-xyz-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
+                <artifactId>repository-mysql-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- infra end -->
+
+
+            <!-- local modules end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>

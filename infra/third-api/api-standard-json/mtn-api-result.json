@@ -1,0 +1,460 @@
+{
+  "baseUrl": "http://hostif.vtm.prism.co.za/xsd",
+  "apiProtocol": "SOAP",
+  "isEncryptionUsed": "Yes",
+  "encryptionAlgorithm": "HTTPS",
+  "apiList": [
+    {
+      "url": "/vend",
+      "method": "POST",
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "The originator’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The destination subscriber’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "amount",
+          "description": "Requested Vend amount",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number as received in the request",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "138",
+          "remark": "Note that no sequence number resynchronization is possible on ERS side for the Host Interface.",
+          "children": []
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "This represents the Type of Transaction to be performed.",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "1",
+          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles",
+          "children": []
+        },
+        {
+          "name": "serviceproviderId",
+          "description": "This represents the operator (MTN) and should always be set to 1.",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "1",
+          "example": "1",
+          "remark": "",
+          "children": []
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "destBalance",
+          "description": "The destination subscriber’s account balance",
+          "dateType": "float",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "998860.0",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The destination subscriber’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "origBalance",
+          "description": "The originator’s account balance",
+          "dateType": "float",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "999360.0",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "origMsisdn",
+          "description": "The originator’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "responseCode",
+          "description": "The Service’s status code",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful",
+          "children": []
+        },
+        {
+          "name": "responseMessage",
+          "description": "The Service’s status message",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "Successful",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number as received in the request",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "139",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "statusId",
+          "description": "StatusId The status of the Vend when executed on the ERS Server",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend",
+          "children": []
+        },
+        {
+          "name": "txRefId",
+          "description": "The Unique Transaction Reference on the ERS Server",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2018122611455497901000006",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "voucherPIN",
+          "description": "Voucher PIN",
+          "dateType": "string",
+          "isRequired": "false",
+          "defaultValue": "",
+          "example": "40692125281574",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "voucherSerial",
+          "description": "Voucher Serial",
+          "dateType": "string",
+          "isRequired": "false",
+          "defaultValue": "",
+          "example": "600000000001",
+          "remark": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "url": "/transfer",
+      "method": "POST",
+      "requestParams": [
+        {
+          "name": "cellNumber",
+          "description": "The originator’s Msisdn. Should exist on ERS",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destCellNumber",
+          "description": "The destination Reseller’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "amount",
+          "description": "Requested Vend amount",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number as received in the request",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "134",
+          "remark": "Note that no sequence number resynchronization is possible on ERS side for the Host Interface.",
+          "children": []
+        },
+        {
+          "name": "txTypeId",
+          "description": "Set this to 1",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "1",
+          "example": "1",
+          "remark": "",
+          "children": []
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "sequence",
+          "description": "Sequence number as received in the request",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "134",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "statusId",
+          "description": "The status of the Vend when executed on the ERS Server",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Transfer",
+          "children": []
+        },
+        {
+          "name": "txRefId",
+          "description": "The Unique Transaction Reference on the ERS Server",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2019102313122923901004223",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "origMsisdn",
+          "description": "The originator’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The destination subscriber’s Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "responseCode",
+          "description": "The Service’s status code",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful",
+          "children": []
+        },
+        {
+          "name": "responseMessage",
+          "description": "The Service’s status message",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "Successful",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "origBalance",
+          "description": "The originator Msisdn balance after transfer",
+          "dateType": "float",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "37868.0",
+          "remark": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "url": "/lookup",
+      "method": "POST",
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "The originator’s Msisdn. Should exist on ERS",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The destination Subscribers Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "amount",
+          "description": "Requested Vend amount",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "This represents the Type of Transaction to be performed.",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "1",
+          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles",
+          "children": []
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "balance",
+          "description": "Partners available balance",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The receivers MSISDN",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "string",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "message",
+          "description": "Status: Success/Failed",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "SUCCESS",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "statusId",
+          "description": "The status of the Vend when executed on the ERS Server",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend",
+          "children": []
+        }
+      ]
+    },
+    {
+      "url": "/querytx",
+      "method": "POST",
+      "requestParams": [
+        {
+          "name": "sequence",
+          "description": "Check transaction status using the clients sequence number",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "139",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "txRef",
+          "description": "Check Transaction status using ERS Reference",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2018122611455497901000006",
+          "remark": "",
+          "children": []
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "message",
+          "description": "Status: Success/Failed",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "SUCCESSFUL",
+          "remark": "",
+          "children": []
+        },
+        {
+          "name": "statusId",
+          "description": "The status of the Vend when executed on the ERS Server",
+          "dateType": "integer",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
