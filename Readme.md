@@ -56,4 +56,7 @@
 ## 测试结果
 
 ### MTN API 文档的解析结果
-[MTN API 文档解析.md](./infra/third-api/api-standard-json/mtn-api/api-convert-result)
+[MTN API 文档解析.md](./infra/third-api/api-standard-json/mtn-api/api-convert-result.md)
+
+### CoralPay API 文档的解析结果
+[CoralPay API 文档解析.md](./infra/third-api/api-standard-json/coral-pay-api/api-convert-result.md)
