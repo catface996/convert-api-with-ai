@@ -1,7 +1,7 @@
 # MTN API 文档的大模型解析
 
 ## MTN API 文档
-[MTN API 文档](../api-docs/MTN-NG_ERS_HOSTIF%20API%20Specification.pdf)
+[MTN API 文档](../../api-docs/MTN-NG_ERS_HOSTIF%20API%20Specification.pdf)
 
 ## 提示词
 
@@ -26,7 +26,7 @@ The output format is JSON, and only the JSON fields in the expected format shoul
 The desired format fields in JSON cannot be changed. Please translate into English.
 
 ## 标准结构
-[API标准结构](../definition/api-definition-v1.json)
+[API标准结构](../../definition/api-definition-v1.json)
 
 ## 其他影响因素
 
@@ -48,7 +48,7 @@ The desired format fields in JSON cannot be changed. Please translate into Engli
   输出格式是json，且仅保留json。
   不可以更改期望格式中的json字段的名称。
 * 结果：
-[生成的结果文件](../api-standard-json/mtn-api-result-with-nova.json)
+[生成的结果文件](api-result-with-nova.json)
 
 ### 通过 Claude 3.5 Haiku
 
@@ -62,7 +62,7 @@ The desired format fields in JSON cannot be changed. Please translate into Engli
   输出格式是json，且仅保留json。
   不可以更改期望格式中的json字段的名称。
 * 结果：
-[生成的结果文件](../api-standard-json/mtn-api-result-with-claud.json)
+[生成的结果文件](api-result-with-claud.json)
 * 发现的问题：
   * 第一次输出的是英文的json，后续输出是中文，通过提示词限制为英文，无效。
 
@@ -77,5 +77,5 @@ The desired format fields in JSON cannot be changed. Please translate into Engli
   输出格式是json，且仅保留json。
   不可以更改期望格式中的json字段的名称。
 * 结果：
-[生成的结果文件](../api-standard-json/mtn-api-result-with-meta.json)
+[生成的结果文件](api-result-with-meta.json)
 

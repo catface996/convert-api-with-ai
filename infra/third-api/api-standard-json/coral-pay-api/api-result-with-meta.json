@@ -1,0 +1,289 @@
+
+{
+  "baseUrl": "https://api.coralpay.com",
+  "apiProtocol": "https",
+  "isEncryptionUsed": true,
+  "encryptionAlgorithm": "PGP",
+  "numberOfApis": 3,
+  "apiList": [
+    {
+      "url": "/name-enquiry",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "Text/Plain",
+        "SecretKey": "{{Key provided by CoralPay}}"
+      },
+      "requestParams": [
+        {
+          "name": "sessionId",
+          "description": "Unique session ID",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000966720915078958283981330700",
+          "remark": "30-digit string consisting of a 6-digit Bank’s Institution ID, followed by a 12-digit current datetime in the format `yyMMddHHmmss`, and a 12-digit unique identifier"
+        },
+        {
+          "name": "destinationInstitutionId",
+          "description": "Unique ID of the destination institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000703",
+          "remark": "See below for list of institution codes"
+        },
+        {
+          "name": "accountId",
+          "description": "Unique ID of the account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1000211487",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "sessionId",
+          "description": "Unique session ID",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000966720915078958283981330700",
+          "remark": ""
+        },
+        {
+          "name": "destinationInstitutionId",
+          "description": "Unique ID of the destination institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000703",
+          "remark": ""
+        },
+        {
+          "name": "accountId",
+          "description": "Unique ID of the account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1000211487",
+          "remark": ""
+        },
+        {
+          "name": "accountName",
+          "description": "Name assigned to the account ID",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Ify Obi",
+          "remark": ""
+        },
+        {
+          "name": "status",
+          "description": "Status of the account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "01",
+          "remark": "01 (For Active account) or 02 (for Closed/Locked/Dormant Account)"
+        },
+        {
+          "name": "responseCode",
+          "description": "Response code of the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "00",
+          "remark": ""
+        },
+        {
+          "name": "responseMessage",
+          "description": "Response message of the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Successful",
+          "remark": ""
+        },
+        {
+          "name": "bvn",
+          "description": "Bank Verification Number linked to the account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "11022117237",
+          "remark": ""
+        },
+        {
+          "name": "kycLevel",
+          "description": "KYC Level of the account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2",
+          "remark": "1, 2 or 3"
+        },
+        {
+          "name": "accountType",
+          "description": "Type of account",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Savings Account",
+          "remark": ""
+        },
+        {
+          "name": "nameEnquiryRef",
+          "description": "Unique reference that is returned when the name enquiry is called",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "20240529051006228290",
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/post-credit",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "Text/Plain",
+        "SecretKey": "{{Key provided by CoralPay}}"
+      },
+      "requestParams": [
+        {
+          "name": "sessionId",
+          "description": "Unique session ID",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000966444324566658283981389895",
+          "remark": "30-digit string consisting of a 6-digit Bank’s Institution ID, followed by a 12-digit current datetime in the format `yyMMddHHmmss`, and a 12-digit unique identifier"
+        },
+        {
+          "name": "paymentRef",
+          "description": "Unique reference number for the payment generated by the source institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2023012123345211290009765",
+          "remark": ""
+        },
+        {
+          "name": "destinationInstitutionId",
+          "description": "Unique ID of the destination institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000703",
+          "remark": "See below for list of institution codes"
+        },
+        {
+          "name": "creditAccount",
+          "description": "Account number to be credited with the payment",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1000211487",
+          "remark": ""
+        },
+        {
+          "name": "creditAccountName",
+          "description": "Name of the account that is to be credited with the payment",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Sola Badmus",
+          "remark": "Max length = 200 characters"
+        },
+        {
+          "name": "sourceAccountId",
+          "description": "Account number of the sender that initiates the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2001223145",
+          "remark": ""
+        },
+        {
+          "name": "sourceAccountName",
+          "description": "Account name of the sender that initiates the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Ify Obi",
+          "remark": "Max length = 200 characters"
+        },
+        {
+          "name": "narration",
+          "description": "Narration of the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Payment for food",
+          "remark": "Max length = 300 characters"
+        },
+        {
+          "name": "channel",
+          "description": "Channel where the transaction is initiated from",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "USSD",
+          "remark": "See below for list of channels"
+        },
+        {
+          "name": "group",
+          "description": "Classification of the account doing the transaction",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Corporate",
+          "remark": ""
+        },
+        {
+          "name": "sector",
+          "description": "Sector of the institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "Banking",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Amount to credit the customer",
+          "dateType": "Decimal",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": 5000.00,
+          "remark": "Must be greater than 0, with a maximum of 16 digits"
+        },
+        {
+          "name": "nameEnquiryRef",
+          "description": "Unique reference that is returned when the name enquiry is called",
+          "dateType": "String",
+          "isRequired": false,
+          "defaultValue": "",
+          "example": "20230323011254478394",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "sessionId",
+          "description": "Unique session ID",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "000966444324566658283981389895",
+          "remark": ""
+        },
+        {
+          "name": "paymentRef",
+          "description": "Unique reference number for the payment generated by the source institution",
+          "dateType": "String",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "202301212334,
