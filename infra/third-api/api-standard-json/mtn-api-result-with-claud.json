@@ -1,0 +1,416 @@
+{
+  "baseUrl": "http://hostif.vtm.prism.co.za/xsd",
+  "apiProtocol": "SOAP",
+  "isEncryptionUsed": "Yes",
+  "encryptionAlgorithm": "HTTP BASIC-AUTH and HTTPS",
+  "numberOfApis": 4,
+  "apiList": [
+    {
+      "url": "/vend",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <base64 encoded credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:Vend"
+      },
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "The originator's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "Should exist on ERS"
+        },
+        {
+          "name": "destMsisdn",
+          "description": "The destination subscriber's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested Vend amount",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number for the request",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "138",
+          "remark": "No sequence number resynchronization possible on ERS side"
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "Type of Transaction",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "1",
+          "remark": "1=Airtime, 4=Postpaid, 7=Voucher, 9-11=Bundles"
+        },
+        {
+          "name": "serviceproviderId",
+          "description": "Operator identifier",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "1",
+          "example": "1",
+          "remark": "Represents MTN"
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "destBalance",
+          "description": "Destination subscriber's account balance",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "998860.0",
+          "remark": ""
+        },
+        {
+          "name": "destMsisdn",
+          "description": "Destination subscriber's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": ""
+        },
+        {
+          "name": "origBalance",
+          "description": "Originator's account balance",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "999360.0",
+          "remark": ""
+        },
+        {
+          "name": "responseCode",
+          "description": "Service status code",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful"
+        },
+        {
+          "name": "responseMessage",
+          "description": "Service status message",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "Successful",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number from request",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "139",
+          "remark": ""
+        },
+        {
+          "name": "statusId",
+          "description": "Vend status on ERS Server",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend"
+        },
+        {
+          "name": "txRefId",
+          "description": "Unique Transaction Reference on ERS Server",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2018122611455497901000006",
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/transfer",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <base64 encoded credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:Transfer"
+      },
+      "requestParams": [
+        {
+          "name": "cellNumber",
+          "description": "Originator's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": "Should exist on ERS"
+        },
+        {
+          "name": "destCellNumber",
+          "description": "Destination Reseller's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested Transfer amount",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number for the request",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "138",
+          "remark": "No sequence number resynchronization possible on ERS side"
+        },
+        {
+          "name": "txTypeId",
+          "description": "Transaction Type",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "1",
+          "example": "1",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "destMsisdn",
+          "description": "Destination subscriber's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": ""
+        },
+        {
+          "name": "origMsisdn",
+          "description": "Originator's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": ""
+        },
+        {
+          "name": "origBalance",
+          "description": "Originator Msisdn balance after transfer",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "37868.0",
+          "remark": ""
+        },
+        {
+          "name": "responseCode",
+          "description": "Service status code",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful"
+        },
+        {
+          "name": "responseMessage",
+          "description": "Service status message",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "Successful",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number from request",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "134",
+          "remark": ""
+        },
+        {
+          "name": "statusId",
+          "description": "Transfer status on ERS Server",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Transfer"
+        },
+        {
+          "name": "txRefId",
+          "description": "Unique Transaction Reference on ERS Server",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2019102313122923901004223",
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/lookup",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <base64 encoded credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:lookup"
+      },
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "Originator's Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2348031010000",
+          "remark": "Should exist on ERS"
+        },
+        {
+          "name": "destMsisdn",
+          "description": "Destination Subscribers Msisdn",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "2348031010999",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested Vend amount",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "Type of Transaction",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "1",
+          "remark": "1=Airtime, 4=Postpaid, 7=Voucher, 9-11=Bundles"
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "balance",
+          "description": "Partners available balance",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": ""
+        },
+        {
+          "name": "destMsisdn",
+          "description": "Receivers MSISDN",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "string",
+          "remark": ""
+        },
+        {
+          "name": "message",
+          "description": "Status of the transaction",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "SUCCESS",
+          "remark": ""
+        },
+        {
+          "name": "statusId",
+          "description": "Status of the Vend on ERS Server",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend"
+        }
+      ]
+    },
+    {
+      "url": "/querytx",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <base64 encoded credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:QyeryTx"
+      },
+      "requestParams": [
+        {
+          "name": "sequence",
+          "description": "Client's sequence number to check transaction status",
+          "dateType": "number",
+          "isRequired": "false",
+          "defaultValue": "",
+          "example": "139",
+          "remark": ""
+        },
+        {
+          "name": "txRef",
+          "description": "ERS Reference to check transaction status",
+          "dateType": "string",
+          "isRequired": "false",
+          "defaultValue": "",
+          "example": "2018122611455497901000006",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "message",
+          "description": "Status of the transaction",
+          "dateType": "string",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "SUCCESSFUL",
+          "remark": ""
+        },
+        {
+          "name": "statusId",
+          "description": "Status of the Vend on ERS Server",
+          "dateType": "number",
+          "isRequired": "true",
+          "defaultValue": "",
+          "example": "0",
+          "remark": "0 = Successful Vend"
+        }
+      ]
+    }
+  ]
+}

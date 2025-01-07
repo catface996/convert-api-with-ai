@@ -1,12 +1,20 @@
+
 {
-  "baseUrl": "http://hostif.vtm.prism.co.za/xsd",
-  "apiProtocol": "SOAP",
-  "isEncryptionUsed": "Yes",
-  "encryptionAlgorithm": "HTTPS",
+  "baseUrl": "",
+  "apiProtocol": "https",
+  "isEncryptionUsed": "true",
+  "encryptionAlgorithm": "AES",
+  "numberOfApis": 4,
   "apiList": [
     {
       "url": "/vend",
       "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:Vend"
+      },
       "requestParams": [
         {
           "name": "origMsisdn",
@@ -15,8 +23,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058470",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "destMsisdn",
@@ -25,8 +32,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "09062058617",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "amount",
@@ -35,8 +41,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "100",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "sequence",
@@ -45,8 +50,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "138",
-          "remark": "Note that no sequence number resynchronization is possible on ERS side for the Host Interface.",
-          "children": []
+          "remark": "No sequence number resynchronization is possible on ERS side for the Host Interface."
         },
         {
           "name": "tariffTypeId",
@@ -55,8 +59,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "1",
-          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles",
-          "children": []
+          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles"
         },
         {
           "name": "serviceproviderId",
@@ -65,8 +68,7 @@
           "isRequired": "true",
           "defaultValue": "1",
           "example": "1",
-          "remark": "",
-          "children": []
+          "remark": ""
         }
       ],
       "responseResults": [
@@ -77,8 +79,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "998860.0",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "destMsisdn",
@@ -87,8 +88,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "09062058617",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "origBalance",
@@ -97,8 +97,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "999360.0",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "origMsisdn",
@@ -107,28 +106,25 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058470",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "responseCode",
-          "description": "The Service’s status code",
+          "description": "The Service’s status code i.e. the status of communication between the Client and Service",
           "dateType": "integer",
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful",
-          "children": []
+          "remark": "0 = Successful"
         },
         {
           "name": "responseMessage",
-          "description": "The Service’s status message",
+          "description": "The Service’s status message corresponding to the responseCode",
           "dateType": "string",
           "isRequired": "true",
           "defaultValue": "",
           "example": "Successful",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "sequence",
@@ -137,8 +133,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "139",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "statusId",
@@ -147,8 +142,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful Vend",
-          "children": []
+          "remark": "0 = Successful Vend"
         },
         {
           "name": "txRefId",
@@ -157,34 +151,19 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2018122611455497901000006",
-          "remark": "",
-          "children": []
-        },
-        {
-          "name": "voucherPIN",
-          "description": "Voucher PIN",
-          "dateType": "string",
-          "isRequired": "false",
-          "defaultValue": "",
-          "example": "40692125281574",
-          "remark": "",
-          "children": []
-        },
-        {
-          "name": "voucherSerial",
-          "description": "Voucher Serial",
-          "dateType": "string",
-          "isRequired": "false",
-          "defaultValue": "",
-          "example": "600000000001",
-          "remark": "",
-          "children": []
+          "remark": ""
         }
       ]
     },
     {
       "url": "/transfer",
       "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:Transfer"
+      },
       "requestParams": [
         {
           "name": "cellNumber",
@@ -193,8 +172,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058470",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "destCellNumber",
@@ -203,8 +181,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058475",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "amount",
@@ -213,8 +190,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "100",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "sequence",
@@ -223,8 +199,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "134",
-          "remark": "Note that no sequence number resynchronization is possible on ERS side for the Host Interface.",
-          "children": []
+          "remark": "No sequence number resynchronization is possible on ERS side for the Host Interface."
         },
         {
           "name": "txTypeId",
@@ -233,8 +208,7 @@
           "isRequired": "true",
           "defaultValue": "1",
           "example": "1",
-          "remark": "",
-          "children": []
+          "remark": ""
         }
       ],
       "responseResults": [
@@ -245,8 +219,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "134",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "statusId",
@@ -255,8 +228,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful Transfer",
-          "children": []
+          "remark": "0 = Successful Transfer"
         },
         {
           "name": "txRefId",
@@ -265,8 +237,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2019102313122923901004223",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "origMsisdn",
@@ -275,8 +246,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058470",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "destMsisdn",
@@ -285,28 +255,25 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2349062058475",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "responseCode",
-          "description": "The Service’s status code",
+          "description": "The Service’s status code i.e. the status of communication between the Client and Service",
           "dateType": "integer",
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful",
-          "children": []
+          "remark": "0 = Successful"
         },
         {
           "name": "responseMessage",
-          "description": "The Service’s status message",
+          "description": "The Service’s status message corresponding to the responseCode",
           "dateType": "string",
           "isRequired": "true",
           "defaultValue": "",
           "example": "Successful",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "origBalance",
@@ -315,14 +282,19 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "37868.0",
-          "remark": "",
-          "children": []
+          "remark": ""
         }
       ]
     },
     {
       "url": "/lookup",
       "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:Lookup"
+      },
       "requestParams": [
         {
           "name": "origMsisdn",
@@ -330,9 +302,8 @@
           "dateType": "string",
           "isRequired": "true",
           "defaultValue": "",
-          "example": "2349062058470",
-          "remark": "",
-          "children": []
+          "example": "2348031010000",
+          "remark": ""
         },
         {
           "name": "destMsisdn",
@@ -340,9 +311,8 @@
           "dateType": "string",
           "isRequired": "true",
           "defaultValue": "",
-          "example": "2349062058475",
-          "remark": "",
-          "children": []
+          "example": "2348031010999",
+          "remark": ""
         },
         {
           "name": "amount",
@@ -351,8 +321,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "100",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "tariffTypeId",
@@ -361,8 +330,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "1",
-          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles",
-          "children": []
+          "remark": "1 ==> Airtime, 4 ==> Postpaid, 7 ==> Voucher, 9,10,11,etc ==> Bundles"
         }
       ],
       "responseResults": [
@@ -373,8 +341,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "destMsisdn",
@@ -383,8 +350,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "string",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "message",
@@ -393,8 +359,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "SUCCESS",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "statusId",
@@ -403,14 +368,19 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful Vend",
-          "children": []
+          "remark": "0 = Successful Vend"
         }
       ]
     },
     {
       "url": "/querytx",
       "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "charset": "UTF-8",
+        "content-type": "application/xml",
+        "SoapAction": "urn:QueryTx"
+      },
       "requestParams": [
         {
           "name": "sequence",
@@ -419,8 +389,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "139",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "txRef",
@@ -429,8 +398,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "2018122611455497901000006",
-          "remark": "",
-          "children": []
+          "remark": ""
         }
       ],
       "responseResults": [
@@ -441,8 +409,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "SUCCESSFUL",
-          "remark": "",
-          "children": []
+          "remark": ""
         },
         {
           "name": "statusId",
@@ -451,8 +418,7 @@
           "isRequired": "true",
           "defaultValue": "",
           "example": "0",
-          "remark": "0 = Successful Vend",
-          "children": []
+          "remark": "0 = Successful Vend"
         }
       ]
     }

@@ -1,0 +1,277 @@
+{
+  "baseUrl": "https://api.mtn.com",
+  "apiProtocol": "https",
+  "isEncryptionUsed": true,
+  "encryptionAlgorithm": "TLS",
+  "numberOfApis": 5,
+  "apiList": [
+    {
+      "url": "/vend",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "Content-Type": "application/xml",
+        "SoapAction": "urn:Vend"
+      },
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "Originator's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": ""
+        },
+        {
+          "name": "destMsisdn",
+          "description": "Destination subscriber's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested vend amount",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "138",
+          "remark": ""
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "Type of transaction",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1",
+          "remark": ""
+        },
+        {
+          "name": "serviceproviderId",
+          "description": "Service provider ID",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "return",
+          "description": "Breakdown of this field",
+          "dateType": "object",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": {
+            "destBalance": "998860.0",
+            "destMsisdn": "09062058617",
+            "origBalance": "999360.0",
+            "origMsisdn": "2349062058470",
+            "responseCode": "0",
+            "responseMessage": "Successful",
+            "sequence": "139",
+            "statusId": "0",
+            "txRefId": "2018122611455497901000006"
+          },
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/transfer",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "Content-Type": "application/xml",
+        "SoapAction": "urn:Transfer"
+      },
+      "requestParams": [
+        {
+          "name": "cellNumber",
+          "description": "Originator's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": ""
+        },
+        {
+          "name": "destCellNumber",
+          "description": "Destination reseller's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2349062058475",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested transfer amount",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "sequence",
+          "description": "Sequence number",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "138",
+          "remark": ""
+        },
+        {
+          "name": "txTypeId",
+          "description": "Transaction type ID",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "return",
+          "description": "Breakdown of this field",
+          "dateType": "object",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": {
+            "destMsisdn": "2349062058475",
+            "origMsisdn": "2349062058470",
+            "origBalance": "37868.0",
+            "responseCode": "0",
+            "responseMessage": "Successful",
+            "sequence": "134",
+            "statusId": "0",
+            "txRefId": "2019102313122923901004223"
+          },
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/lookup",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "Content-Type": "application/xml",
+        "SoapAction": "urn:Lookup"
+      },
+      "requestParams": [
+        {
+          "name": "origMsisdn",
+          "description": "Originator's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2349062058470",
+          "remark": ""
+        },
+        {
+          "name": "destMsisdn",
+          "description": "Destination subscriber's MSISDN",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "09062058617",
+          "remark": ""
+        },
+        {
+          "name": "amount",
+          "description": "Requested vend amount",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "100",
+          "remark": ""
+        },
+        {
+          "name": "tariffTypeId",
+          "description": "Type of transaction",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "1",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "return",
+          "description": "Breakdown of this field",
+          "dateType": "object",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": {
+            "balance": "0",
+            "destMsisdn": "string",
+            "message": "SUCCESS",
+            "statusId": "0"
+          },
+          "remark": ""
+        }
+      ]
+    },
+    {
+      "url": "/querytx",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <credentials>",
+        "Content-Type": "application/xml",
+        "SoapAction": "urn:QueryTx"
+      },
+      "requestParams": [
+        {
+          "name": "sequence",
+          "description": "Sequence number",
+          "dateType": "integer",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "139",
+          "remark": ""
+        },
+        {
+          "name": "txRef",
+          "description": "Transaction reference",
+          "dateType": "string",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": "2018122611455497901000006",
+          "remark": ""
+        }
+      ],
+      "responseResults": [
+        {
+          "name": "return",
+          "description": "Breakdown of this field",
+          "dateType": "object",
+          "isRequired": true,
+          "defaultValue": "",
+          "example": {
+            "message": "SUCCESSFUL",
+            "statusId": "0"
+          },
+          "remark": ""
+        }
+      ]
+    }
+  ]
+}
