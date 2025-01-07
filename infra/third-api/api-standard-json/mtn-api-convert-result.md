@@ -6,16 +6,23 @@
 ## 提示词
 
 MTN API文档中，是对API接口的描述。api-definition是一个期望的API格式。请将MTN API文档中的内容，按照期望的API格式来输出。
+
 要求：
+
 请使用英来生成json。
+
 输出格式是json，且仅保留json。
+
 不可以更改期望格式中的json字段的名称。
 
 In the MTN API documentation, there is a description of the API interface. api-definition is a desired API format. Please output the content from the MTN API documentation in the expected API format.
 
 Requirements: 
+
 Please generate the JSON using English. 
+
 The output format is JSON, and only the JSON fields in the expected format should be retained. 
+
 The desired format fields in JSON cannot be changed. Please translate into English.
 
 ## 标准结构
