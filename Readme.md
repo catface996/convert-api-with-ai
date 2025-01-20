@@ -60,3 +60,17 @@
 
 ### CoralPay API 文档的解析结果
 [CoralPay API 文档解析.md](./infra/third-api/api-standard-json/coral-pay-api/api-convert-result.md)
+
+## 通过大模型对解析结果打分
+### 指令
+coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个文档，是根据CoralPay的API文档，按照 api-definition-v2.pdf 生成的。请判断，这三个文档中，哪个文档是最符合要求，且最准确的，请给出文件名称。要求如下：
+1.仅输出文档名称，无需输出判断过程。
+2.如果匹配度得分满分是100分，最匹配的文档的得分是多少？
+3.输出格式要求如下：{"fileName":"?","score":"?"}
+
+### Nova的输出结果
+{"fileName":"coral-pay-api-nova.pdf","score":"100"}
+![img.png](pic/nova-evaluation.png)
+### Claude的输出结果
+{"fileName":"coral-pay-api-meta.pdf","score":"95"}
+![img.png](pic/claude-evaluation.png)
