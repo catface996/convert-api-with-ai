@@ -111,10 +111,10 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
     * 务必遵守 https://swagger.org.cn/specification/v2/ 的规范。完整识别请求参数中的header，body已经响应结果。
     * 请求体的格式必须与文档中描述的一致，例如json或者xml等。
     * 如果文档中的请求参数有样例，生成的请求体中的参数对应的值，请使用文档中提供的样例。
-    * 给出的API文档中不会有敏感信，是一些样例数据。如果有铭感内容，请用'#'代替，避免被blocked。
-    * 如果要求的格式是yaml，请将yaml格式转换成json进行输出。
     * 如果请求参数和响应结果是xml，请务必保证导入到Swagger后，可以被识别。请务必生成example的数据。
-    * 仅输出脚本，不输出其他任何信息。
+    * 给出的API文档中不会有敏感信，是一些样例数据。如果有敏感内容，请用'#'代替，避免被blocked。
+    * 如果标准格式是yaml，请将yaml格式转换成json进行输出，避免因为输出结果超过限制被blocked。
+    * 仅输出脚本，不输出其他任何信息，以方便导入到工具中。
     * 务必要输出完整的脚本，不能应为长度限制截断脚本。
     
 #### Coral Pay API 识别和导入（JSON格式）
