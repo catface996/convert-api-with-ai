@@ -53,7 +53,13 @@
 * 即使是上一个环节的输出没有达到预期的效果，可以通过人工对结果的调整，作为下一个环节的标准输入，避免上一个环节的不准确性对下一个环节产生影响。
 * 每个环节可以独立开发。
 
-## 测试结果
+## 对结果的判定标准
+* 通过人工判断
+* 通过预设的标准结果来判定
+* 通过不同的模型来对结果做判定
+* 通过行业的标准工具来判定
+
+## 自定义目标格式的测试结果
 
 ### MTN API 文档的解析结果
 [MTN API 文档解析.md](infra/third-api/customer-standard/mtn-api/api-convert-result.md)
@@ -61,13 +67,8 @@
 ### CoralPay API 文档的解析结果
 [CoralPay API 文档解析.md](infra/third-api/customer-standard/coral-pay-api/api-convert-result.md)
 
-## 对结果的判定标准
-* 通过人工判断
-* 通过预设的标准结果来判定
-* 通过不同的模型来对结果做判定
-* 通过行业的标准工具来判定
-
 ## 通过大模型对解析结果打分
+
 ### 指令
 coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个文档，是根据CoralPay的API文档，按照 api-definition-v2.pdf 生成的。请判断，这三个文档中，哪个文档是最符合要求，且最准确的，请给出文件名称。要求如下：
 1.仅输出文档名称，无需输出判断过程。
@@ -77,6 +78,7 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
 ### Nova的输出结果
 {"fileName":"coral-pay-api-nova.pdf","score":"100"}
 ![img.png](pic/nova-evaluation.png)
+
 ### Claude的输出结果
 {"fileName":"coral-pay-api-meta.pdf","score":"95"}
 ![img.png](pic/claude-evaluation.png)
