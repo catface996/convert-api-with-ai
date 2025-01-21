@@ -1,0 +1,459 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ERS 3600 HOSTIF API",
+    "version": "1.0.0",
+    "description": "API documentation for ERS 3600 HOSTIF using SOAP protocol"
+  },
+  "host": "api.example.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/vend": {
+      "post": {
+        "summary": "Vend API Function",
+        "description": "Used to purchase Airtime/Databundle/Voucher for Prepaid/Postpaid Subscriber Account.",
+        "consumes": [
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "vend",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "xsd:vend": {
+                          "type": "object",
+                          "properties": {
+                            "origMsisdn": {
+                              "type": "string",
+                              "example": "2349062058470"
+                            },
+                            "destMsisdn": {
+                              "type": "string",
+                              "example": "09062058617"
+                            },
+                            "amount": {
+                              "type": "integer",
+                              "example": 100
+                            },
+                            "sequence": {
+                              "type": "integer",
+                              "example": 138
+                            },
+                            "tariffTypeId": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "serviceproviderId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "vendResponse": {
+                          "type": "object",
+                          "properties": {
+                            "destBalance": {
+                              "type": "number",
+                              "example": 998860.0
+                            },
+                            "destMsisdn": {
+                              "type": "string",
+                              "example": "09062058617"
+                            },
+                            "origBalance": {
+                              "type": "number",
+                              "example": 999360.0
+                            },
+                            "origMsisdn": {
+                              "type": "string",
+                              "example": "2349062058470"
+                            },
+                            "responseCode": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "responseMessage": {
+                              "type": "string",
+                              "example": "Successful"
+                            },
+                            "sequence": {
+                              "type": "integer",
+                              "example": 139
+                            },
+                            "statusId": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "txRefId": {
+                              "type": "string",
+                              "example": "2018122611455497901000006"
+                            },
+                            "voucherPIN": {
+                              "type": "string",
+                              "example": "40692125281574"
+                            },
+                            "voucherSerial": {
+                              "type": "string",
+                              "example": "600000000001"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transfer": {
+      "post": {
+        "summary": "Transfer API Function",
+        "description": "Transfers credit/stock from one reseller to another.",
+        "consumes": [
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "transfer",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "xsd:transfer": {
+                          "type": "object",
+                          "properties": {
+                            "cellNumber": {
+                              "type": "string",
+                              "example": "2349062058470"
+                            },
+                            "destCellNumber": {
+                              "type": "string",
+                              "example": "2349062058475"
+                            },
+                            "amount": {
+                              "type": "integer",
+                              "example": 100
+                            },
+                            "sequence": {
+                              "type": "integer",
+                              "example": 134
+                            },
+                            "txTypeId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "transferResponse": {
+                          "type": "object",
+                          "properties": {
+                            "sequence": {
+                              "type": "integer",
+                              "example": 134
+                            },
+                            "statusId": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "txRefId": {
+                              "type": "string",
+                              "example": "2019102313122923901004223"
+                            },
+                            "origMsisdn": {
+                              "type": "string",
+                              "example": "2349062058470"
+                            },
+                            "destMsisdn": {
+                              "type": "string",
+                              "example": "2349062058475"
+                            },
+                            "responseCode": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "responseMessage": {
+                              "type": "string",
+                              "example": "Successful"
+                            },
+                            "origBalance": {
+                              "type": "number",
+                              "example": 37868.0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lookup": {
+      "post": {
+        "summary": "Lookup API Function",
+        "description": "Validates the subscriber MSISDN and amount/tariff before doing a Vend.",
+        "consumes": [
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "lookup",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "tns:lookup": {
+                          "type": "object",
+                          "properties": {
+                            "origMsisdn": {
+                              "type": "string",
+                              "example": "2348031010000"
+                            },
+                            "destMsisdn": {
+                              "type": "string",
+                              "example": "2348031010999"
+                            },
+                            "amount": {
+                              "type": "integer",
+                              "example": 100
+                            },
+                            "tariffTypeId": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "LookupResponse": {
+                          "type": "object",
+                          "properties": {
+                            "balance": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "destMsisdn": {
+                              "type": "string",
+                              "example": "string"
+                            },
+                            "message": {
+                              "type": "string",
+                              "example": "SUCCESS"
+                            },
+                            "statusId": {
+                              "type": "integer",
+                              "example": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/querytx": {
+      "post": {
+        "summary": "QueryTx API Function",
+        "description": "Queries the transaction status of a specific transaction based on sequenceNumber or ERS Reference.",
+        "consumes": [
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "querytx",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "xsd:querytx": {
+                          "type": "object",
+                          "properties": {
+                            "sequence": {
+                              "type": "integer",
+                              "example": 139
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soapenv:Envelope": {
+                  "type": "object",
+                  "properties": {
+                    "soapenv:Header": {
+                      "type": "object"
+                    },
+                    "soapenv:Body": {
+                      "type": "object",
+                      "properties": {
+                        "queryTxResponse": {
+                          "type": "object",
+                          "properties": {
+                            "message": {
+                              "type": "string",
+                              "example": "SUCCESSFUL"
+                            },
+                            "statusId": {
+                              "type": "integer",
+                              "example": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

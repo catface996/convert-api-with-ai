@@ -109,7 +109,7 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
     * 仅输出脚本，不输出其他任何信息。
     * 务必要输出完整的脚本，不能应为长度限制截断脚本。
     
-#### Coral Pay API 识别和导入
+#### Coral Pay API 识别和导入（JSON格式）
 
 [Coral Pay API Doc](./infra/third-api/api-docs/CoralPay%20Interbank%20Payment%20(CIP)%20API%20Document%20v1.2.3-1_1.pdf)
 
@@ -117,5 +117,18 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
 
 [导入到SwaggerHub之后的在线API文档](https://app.swaggerhub.com/apis/abc-7cc/coral-pay_interbank_payment_api/1.2.3)
 
-#### MTN API 识别和导入
+#### MTN API 识别和导入（XML格式）
 
+[MTN API Doc](./infra/third-api/api-docs/MTN-NG_ERS_HOSTIF%20API%20Specification.pdf)
+
+[通过Nova识别出的yaml或者json文档](./infra/third-api/swagger/MTN-swagger.json)
+
+[导入到SwaggerHub之后的在线API文档](https://app.swaggerhub.com/apis/abc-7cc/ers-3600_hostif_api/1.0.1)
+
+#### UBA API 识别和导入 （JSON模式）
+
+[UBA API Doc](./infra/third-api/api-docs/PAYOUT%20UBA-UBA.pdf)
+
+[通过Nova识别出的yaml或者json文档](./infra/third-api/swagger/UBA-swagger.json)
+
+[导入到SwaggerHub之后的在线API文档](https://app.swaggerhub.com/apis/abc-7cc/uba-open_banking_api/1.0.0)

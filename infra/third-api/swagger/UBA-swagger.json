@@ -1,0 +1,315 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "UBA Open Banking API",
+    "version": "1.0.0"
+  },
+  "host": "gateway.ubaopenbanking.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/nameenquiry/v1.0": {
+      "post": {
+        "summary": "UBA to UBA Name Enquiry",
+        "operationId": "nameEnquiry",
+        "parameters": [
+          {
+            "name": "Applcode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "BASE64ENCODE(BET9JA)"
+          },
+          {
+            "name": "AccessCode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Sandbox Access Token generated"
+          },
+          {
+            "name": "Clientno",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "24982"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Basic Authentication Credentials"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "receiverBankCode": {
+                  "type": "string",
+                  "example": "999033"
+                },
+                "receiverAccountNumber": {
+                  "type": "string",
+                  "example": "1009809540"
+                },
+                "countryCode": {
+                  "type": "string",
+                  "example": "NG"
+                },
+                "tranType": {
+                  "type": "string",
+                  "example": "nameenquiry"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errorFlag": {
+                  "type": "string",
+                  "example": "false"
+                },
+                "statusMsg": {
+                  "type": "string",
+                  "example": ""
+                },
+                "statusCode": {
+                  "type": "string",
+                  "example": "0"
+                },
+                "customerName": {
+                  "type": "string",
+                  "example": "MADUMERE ROLAND CHIMAOBI"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/fundtransfer/v1.0": {
+      "post": {
+        "summary": "UBA to UBA Funds Transfer",
+        "operationId": "fundTransfer",
+        "parameters": [
+          {
+            "name": "Applcode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "BASE64ENCODE(BET9JA)"
+          },
+          {
+            "name": "AccessCode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Sandbox Access Token generated"
+          },
+          {
+            "name": "Clientno",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "24982"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Basic Authentication Credentials"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "receiverBankCode": {
+                  "type": "string",
+                  "example": "999033"
+                },
+                "receiverAccountName": {
+                  "type": "string",
+                  "example": "MADUMERE ROLAND CHIMAOBI"
+                },
+                "receiverAccountNumber": {
+                  "type": "string",
+                  "example": "1009809540"
+                },
+                "transactionAmount": {
+                  "type": "string",
+                  "example": "7.81"
+                },
+                "referenceID": {
+                  "type": "string",
+                  "example": "20937392"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Funds"
+                },
+                "countryCode": {
+                  "type": "string",
+                  "example": "NG"
+                },
+                "tranType": {
+                  "type": "string",
+                  "example": "fundtransfer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errorFlag": {
+                  "type": "string",
+                  "example": "false"
+                },
+                "statusCode": {
+                  "type": "string",
+                  "example": "000"
+                },
+                "tran_date_time": {
+                  "type": "string",
+                  "example": "20200226112544"
+                },
+                "Stan": {
+                  "type": "string",
+                  "example": "001513200226"
+                },
+                "referenceID": {
+                  "type": "string",
+                  "example": "20937392"
+                },
+                "ResponseMessage": {
+                  "type": "string",
+                  "example": "Transaction has been posted Successfully."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/finacle/tsq/v1.0": {
+      "post": {
+        "summary": "Re-Query Service (UBA-UBA)",
+        "operationId": "reQuery",
+        "parameters": [
+          {
+            "name": "Applcode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "BASE64ENCODE(BET9JA)"
+          },
+          {
+            "name": "AccessCode",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Sandbox Access Token generated"
+          },
+          {
+            "name": "Clientno",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "24982"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Basic Authentication Credentials"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "CountryCode": {
+                  "type": "string",
+                  "example": "NG"
+                },
+                "referenceID": {
+                  "type": "string",
+                  "example": "20937392"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Amount": {
+                  "type": "number",
+                  "example": 7.81
+                },
+                "StatusCode": {
+                  "type": "string",
+                  "example": "000"
+                },
+                "Stan": {
+                  "type": "string",
+                  "example": "01513200226"
+                },
+                "SessionID": {
+                  "type": "string",
+                  "example": ""
+                },
+                "StatusMessage": {
+                  "type": "string",
+                  "example": "Success"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    },
+    "apiKey": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "AccessCode"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    },
+    {
+      "apiKey": []
+    }
+  ]
+}
