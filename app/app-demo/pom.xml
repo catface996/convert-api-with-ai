@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.catface996.ai</groupId>
-            <artifactId>third-api-abc-impl</artifactId>
+            <artifactId>third-api-coralpay-impl</artifactId>
         </dependency>
         <!-- local module end -->
         <dependency>

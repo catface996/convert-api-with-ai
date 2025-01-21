@@ -1,0 +1,734 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.2.3",
+    "title": "CoralPay Interbank Payment API"
+  },
+  "host": "api.coralpay.com",
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/name-enquiry/outgoing": {
+      "post": {
+        "summary": "Outgoing Name Enquiry",
+        "operationId": "outgoingNameEnquiry",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/Plain"
+          },
+          {
+            "in": "header",
+            "name": "SecretKey",
+            "type": "string",
+            "required": true,
+            "default": "##"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966720915078958283981330700"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "accountId": {
+                  "type": "string",
+                  "example": "1000211487"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966720915078958283981330700"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "accountId": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "accountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "01"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                },
+                "bvn": {
+                  "type": "string",
+                  "example": "11022117237"
+                },
+                "kycLevel": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "accountType": {
+                  "type": "string",
+                  "example": "Savings Account"
+                },
+                "nameEnquiryRef": {
+                  "type": "string",
+                  "example": "20240529051006228290"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/name-enquiry/incoming": {
+      "post": {
+        "summary": "Incoming Name Enquiry",
+        "operationId": "incomingNameEnquiry",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/plain"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966720915078958283981330700"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "accountId": {
+                  "type": "string",
+                  "example": "1000211487"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966720915078958283981330700"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "accountId": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "accountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "01"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                },
+                "bvn": {
+                  "type": "string",
+                  "example": "11022117237"
+                },
+                "kycLevel": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "accountType": {
+                  "type": "string",
+                  "example": "Savings Account"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/post-credit/outgoing": {
+      "post": {
+        "summary": "Outgoing Credit Operation",
+        "operationId": "outgoingCreditOperation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/Plain"
+          },
+          {
+            "in": "header",
+            "name": "SecretKey",
+            "type": "string",
+            "required": true,
+            "default": "##"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966444324566658283981389895"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "nameEnquiryRef": {
+                  "type": "string",
+                  "example": "20230323011254478394"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966444324566658283981389895"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "nameEnquiryRef": {
+                  "type": "string",
+                  "example": "20230323011254478394"
+                },
+                "transactionDate": {
+                  "type": "string",
+                  "example": "2023-03-23 10:28:25.007"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/post-credit/incoming": {
+      "post": {
+        "summary": "Incoming Credit Operation",
+        "operationId": "incomingCreditOperation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/plain"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966444324566658283981389895"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "nameEnquiryRef": {
+                  "type": "string",
+                  "example": "20230323011254478394"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966444324566658283981389895"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "nameEnquiryRef": {
+                  "type": "string",
+                  "example": "20230323011254478394"
+                },
+                "transactionDate": {
+                  "type": "string",
+                  "example": "2023-03-23 10:28:25.007"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction-query/outgoing": {
+      "post": {
+        "summary": "Outgoing Transaction Query Operation",
+        "operationId": "outgoingTransactionQueryOperation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/Plain"
+          },
+          {
+            "in": "header",
+            "name": "SecretKey",
+            "type": "string",
+            "required": true,
+            "default": "##"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966367432476535828398145678"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966367432476535828398145678"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211487"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "transactionDate": {
+                  "type": "string",
+                  "example": "2022-02-28T07:05:50.1994153+01:00"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction-query/incoming": {
+      "post": {
+        "summary": "Incoming Transaction Query Operation",
+        "operationId": "incomingTransactionQueryOperation",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "type": "string",
+            "required": true,
+            "default": "Text/plain"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966367432476535828398145678"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "example": "000966367432476535828398145678"
+                },
+                "paymentRef": {
+                  "type": "string",
+                  "example": "2023012123345211290009765"
+                },
+                "destinationInstitutionId": {
+                  "type": "string",
+                  "example": "000703"
+                },
+                "creditAccount": {
+                  "type": "string",
+                  "example": "1000211454"
+                },
+                "creditAccountName": {
+                  "type": "string",
+                  "example": "Sola Badmus"
+                },
+                "sourceAccountId": {
+                  "type": "string",
+                  "example": "2001223145"
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "example": "Ify Obi"
+                },
+                "narration": {
+                  "type": "string",
+                  "example": "Payment for food"
+                },
+                "channel": {
+                  "type": "string",
+                  "example": "USSD"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "Corporate"
+                },
+                "sector": {
+                  "type": "string",
+                  "example": "Banking"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 5000.0
+                },
+                "transactionDate": {
+                  "type": "string",
+                  "example": "2022-02-28T07:05:50.1994153+01:00"
+                },
+                "responseCode": {
+                  "type": "string",
+                  "example": "00"
+                },
+                "responseMessage": {
+                  "type": "string",
+                  "example": "Successful"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

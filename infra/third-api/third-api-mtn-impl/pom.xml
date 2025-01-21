@@ -7,8 +7,8 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../../pom.xml</relativePath>
     </parent>
-    <artifactId>third-api-xyz-impl</artifactId>
-    <name>third-api-xyz-impl</name>
+    <artifactId>third-api-mtn-impl</artifactId>
+    <name>third-api-mtn-impl</name>
 
     <build>
         <plugins>

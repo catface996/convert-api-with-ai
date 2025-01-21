@@ -38,8 +38,8 @@
         <!-- infra begin -->
 
         <!-- ## third api begin ## -->
-        <module>infra/third-api//third-api-abc-impl</module>
-        <module>infra/third-api//third-api-xyz-impl</module>
+        <module>infra/third-api//third-api-coralpay-impl</module>
+        <module>infra/third-api//third-api-mtn-impl</module>
         <!-- ## third api end ## -->
 
         <!-- ## third repository begin ## -->
@@ -110,7 +110,7 @@
             <!-- infra begin -->
             <dependency>
                 <groupId>com.catface996.ai</groupId>
-                <artifactId>third-api-abc-impl</artifactId>
+                <artifactId>third-api-coralpay-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

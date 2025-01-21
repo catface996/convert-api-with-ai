@@ -1,0 +1,218 @@
+{
+  "info": {
+    "name": "CoralPay Interbank Payment API",
+    "_postman_id": "12345678-1234-1234-1234-123456789abc",
+    "description": "API collection for CoralPay Interbank Payment Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Name Enquiry",
+      "item": [
+        {
+          "name": "Outgoing Name Enquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "SecretKey",
+                "value": "{{Key provided by CoralPay}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966720915078958283981330700\",\n  \"destinationInstitutionId\": \"000703\",\n  \"accountId\": \"1000211487\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/name-enquiry",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "name-enquiry"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Name Enquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966720915078958283981330700\",\n  \"destinationInstitutionId\": \"000703\",\n  \"accountId\": \"1000211487\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/name-enquiry",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "name-enquiry"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post Credit",
+      "item": [
+        {
+          "name": "Outgoing Credit Operation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "SecretKey",
+                "value": "{{Key provided by CoralPay}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966444324566658283981389895\",\n  \"paymentRef\": \"2023012123345211290009765\",\n  \"destinationInstitutionId\": \"000703\",\n  \"creditAccount\": \"1000211487\",\n  \"creditAccountName\": \"Sola Badmus\",\n  \"sourceAccountId\": \"2001223145\",\n  \"sourceAccountName\": \"Ify Obi\",\n  \"narration\": \"Payment for food\",\n  \"channel\": \"USSD\",\n  \"group\": \"Corporate\",\n  \"sector\": \"Banking\",\n  \"amount\": 5000.00,\n  \"nameEnquiryRef\": \"20230323011254478394\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/post-credit",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "post-credit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Credit Operation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966444324566658283981389895\",\n  \"paymentRef\": \"2023012123345211290009765\",\n  \"destinationInstitutionId\": \"000703\",\n  \"creditAccount\": \"1000211487\",\n  \"creditAccountName\": \"Sola Badmus\",\n  \"sourceAccountId\": \"2001223145\",\n  \"sourceAccountName\": \"Ify Obi\",\n  \"narration\": \"Payment for food\",\n  \"channel\": \"USSD\",\n  \"group\": \"Corporate\",\n  \"sector\": \"Banking\",\n  \"amount\": 5000.00,\n  \"nameEnquiryRef\": \"20230323011254478394\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/post-credit",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "post-credit"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transaction Query",
+      "item": [
+        {
+          "name": "Outgoing Transaction Query Operation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "SecretKey",
+                "value": "{{Key provided by CoralPay}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966367432476535828398145678\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/transaction-query",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "transaction-query"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Transaction Query Operation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"000966367432476535828398145678\"\n}"
+            },
+            "url": {
+              "raw": "https://api.coralpay.com/transaction-query",
+              "protocol": "https",
+              "host": [
+                "api",
+                "coralpay",
+                "com"
+              ],
+              "path": [
+                "transaction-query"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "Key provided by CoralPay",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
