@@ -59,7 +59,7 @@
 * 通过不同的模型来对结果做判定
 * 通过行业的标准工具来判定
 
-## 自定义目标格式的测试结果
+## 自定义目标格式的测试结果 😓
 
 ### MTN API 文档的解析结果
 [MTN API 文档解析.md](infra/third-api/customer-standard/mtn-api/api-convert-result.md)
@@ -67,7 +67,7 @@
 ### CoralPay API 文档的解析结果
 [CoralPay API 文档解析.md](infra/third-api/customer-standard/coral-pay-api/api-convert-result.md)
 
-## 通过大模型对解析结果打分
+## 通过大模型对解析结果打分 😓
 
 ### 指令
 coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个文档，是根据CoralPay的API文档，按照 api-definition-v2.pdf 生成的。请判断，这三个文档中，哪个文档是最符合要求，且最准确的，请给出文件名称。要求如下：
@@ -83,7 +83,7 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
 {"fileName":"coral-pay-api-meta.pdf","score":"95"}
 ![img.png](pic/claude-evaluation.png)
 
-## 通过大模型将API文档转换成通用标准结构
+## 通过大模型将API文档转换成通用标准结构 😄
 * Swagger通用结构，例如：SwaggerHub https://app.swaggerhub.com/hub
 * Postman结构
 
