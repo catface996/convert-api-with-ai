@@ -118,8 +118,9 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
     * 如果请求参数和响应结果是xml，请务必保证导入到Swagger后，可以被识别。请务必生成example的数据。
     * 给出的API文档中不会有敏感信，是一些样例数据。如果有敏感内容，请用'#'代替，避免被blocked。
     * 如果标准格式是yaml，请将yaml格式转换成json进行输出，避免因为输出结果超过限制被blocked。
-    * 仅输出脚本，不输出其他任何信息，以方便导入到工具中。
-    * 务必要输出完整的脚本，不能应为长度限制截断脚本。
+    * 仅输出json或者yaml，不输出其他任何信息，以方便导入到工具中。
+    * 务必要输出完整的脚本，不能因为长度限制截断脚本。
+    * 将出现的中文全部翻译成英文。
     
 #### Coral Pay API 识别和导入（JSON格式）
 
@@ -137,10 +138,71 @@ coral-pay-api-nova.pdf，coral-pay-api-meta.pdf，coral-pay-api-claud.pdf 三个
 
 [导入到SwaggerHub之后的在线API文档](https://app.swaggerhub.com/apis/abc-7cc/ers-3600_hostif_api/1.0.1)
 
-#### UBA API 识别和导入 （JSON模式）
+#### UBA API 识别和导入（JSON模式）
 
 [UBA API Doc](./infra/third-api/api-docs/PAYOUT%20UBA-UBA.pdf)
 
 [通过Nova识别出的yaml或者json文档](./infra/third-api/swagger/UBA-swagger.json)
 
 [导入到SwaggerHub之后的在线API文档](https://app.swaggerhub.com/apis/abc-7cc/uba-open_banking_api/1.0.0)
+
+## 查询天气的API集成
+[查询天气的平台](https://blog.csdn.net/weixin_48201324/article/details/122260128)
+
+https://lbs.amap.com/api/webservice/guide/api/weatherinfo/
+// 高德天气
+
+https://dev.qweather.com/docs/api/weather/weather-now/
+// 和风天气
+
+https://openweathermap.org/current
+// Open Weather
+
+## 查询股票信息的集成
+
+https://ad.biyingapi.com/apidoc.html
+
+
+## 根据API生成可以针对API进行测试的测试用例
+
+### 测试用例结构
+* 1. 测试用例标识
+   测试用例编号: [编号]
+   测试用例名称: [名称]
+* 2. 前置条件
+   系统前置条件: [描述系统需要处于的状态]
+   硬件/软件要求: [描述需要的硬件或软件环境]
+* 3. 测试输入
+   测试数据: [具体输入数据]
+   测试步骤:
+   [步骤1]
+   [步骤2]
+   [步骤3]
+   [步骤4]
+* 4. 预期结果
+   [明确描述预期输出或行为]
+* 5. 实际结果
+   [记录实际执行测试用例时观察到的结果]
+* 6. 测试结论
+   通过/失败: [根据实际结果与预期结果的比较，判断测试用例是否通过]
+* 7. 备注
+
+### 根据接口描述，生成测试用例
+* 指令
+  * 请根据接口描述，生成测试用例，请遵守以下规则：
+  * 生成覆盖主流程的测试用例。
+  * 生成覆盖分支流程的测试用例。
+  * 生成覆盖异常流程的测试用例。
+  * 生成测试用例的同时，生成对应测试用例的自动化测试用例，自动化测试用例使用 python  命令来实现。
+  * 不要生成跟测试用例无关的其他任何信息。
+  * 输出的格式请使用ipynb。
+  * 对测试用例中要使用的公共参数，例如密钥，账号密码等参数，定义成全局变量。
+  * 对测试用例的执行结果做断言。
+
+### 生成的ipynb文件
+
+[Gade-test-case.ipynb](./infra/third-api/test-case/Gade-test-case.ipynb)
+
+[Gode-test-case-python.ipynb](./infra/third-api/test-case/Gode-test-case-python.ipynb)
+
+
