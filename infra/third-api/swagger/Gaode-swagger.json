@@ -1,0 +1,157 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Gaode Maps Weather Information API",
+    "description": "API for querying real-time and forecast weather information.",
+    "version": "1.0.0"
+  },
+  "host": "restapi.amap.com",
+  "basePath": "/v3/weather/weatherInfo",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/v3/weather/weatherInfo": {
+      "get": {
+        "summary": "Query real-time and forecast weather information",
+        "description": "This API provides real-time and forecast weather information for a specified city.",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "description": "User key applied for on the Gaode Open Platform.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "The city to query, can be city name, city code, or adcode.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "extensions",
+            "in": "query",
+            "description": "The detail level of the returned result, can be 'base' or 'all'. Default is 'base'.",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "base",
+              "all"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "lives": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "city": {
+                        "type": "string",
+                        "description": "City name",
+                        "example": "Beijing"
+                      },
+                      "weather": {
+                        "type": "string",
+                        "description": "Weather phenomenon description",
+                        "example": "Sunny"
+                      },
+                      "temperature": {
+                        "type": "string",
+                        "description": "Current temperature",
+                        "example": "25"
+                      },
+                      "winddirection": {
+                        "type": "string",
+                        "description": "Wind direction",
+                        "example": "North"
+                      },
+                      "windpower": {
+                        "type": "string",
+                        "description": "Wind power",
+                        "example": "3"
+                      },
+                      "humidity": {
+                        "type": "string",
+                        "description": "Relative humidity",
+                        "example": "60"
+                      },
+                      "reporttime": {
+                        "type": "string",
+                        "description": "Report time",
+                        "example": "2023-10-01 12:00:00"
+                      }
+                    }
+                  }
+                },
+                "forecasts": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "casts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "week": {
+                              "type": "string",
+                              "description": "Weekday",
+                              "example": "Monday"
+                            },
+                            "date": {
+                              "type": "string",
+                              "description": "Date",
+                              "example": "2023-10-02"
+                            },
+                            "dayweather": {
+                              "type": "string",
+                              "description": "Daytime weather",
+                              "example": "Sunny"
+                            },
+                            "nightweather": {
+                              "type": "string",
+                              "description": "Nighttime weather",
+                              "example": "Clear"
+                            },
+                            "daytemp": {
+                              "type": "string",
+                              "description": "Daytime temperature",
+                              "example": "28"
+                            },
+                            "nighttemp": {
+                              "type": "string",
+                              "description": "Nighttime temperature",
+                              "example": "18"
+                            },
+                            "daywind": {
+                              "type": "string",
+                              "description": "Daytime wind",
+                              "example": "North 3"
+                            },
+                            "nightwind": {
+                              "type": "string",
+                              "description": "Nighttime wind",
+                              "example": "North 2"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
