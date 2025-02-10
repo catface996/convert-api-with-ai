@@ -1,4 +1,4 @@
-package com.catface996.ai.api.param;
+package com.catface996.ai.api.express.param;
 
 import lombok.Data;
 

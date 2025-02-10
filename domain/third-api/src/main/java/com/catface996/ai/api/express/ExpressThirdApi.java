@@ -1,7 +1,7 @@
-package com.catface996.ai.api;
+package com.catface996.ai.api.express;
 
-import com.catface996.ai.api.model.ExpressOrderApiModel;
-import com.catface996.ai.api.param.ExpressOrderApiParam;
+import com.catface996.ai.api.express.model.ExpressOrderApiModel;
+import com.catface996.ai.api.express.param.ExpressOrderApiParam;
 
 public interface ExpressThirdApi {
 

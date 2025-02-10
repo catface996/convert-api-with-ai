@@ -45,6 +45,7 @@
         <!-- ## third repository begin ## -->
         <module>infra/repository/repository-mysql-impl</module>
         <module>infra/repository/repository-mongodb-impl</module>
+        <module>infra/third-api/weather-api-impl</module>
         <!-- ## third repository emd ## -->
 
         <!-- infra end -->

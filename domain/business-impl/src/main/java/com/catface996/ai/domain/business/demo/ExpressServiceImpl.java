@@ -1,8 +1,8 @@
 package com.catface996.ai.domain.business.demo;
 
-import com.catface996.ai.api.ExpressThirdApi;
-import com.catface996.ai.api.model.ExpressOrderApiModel;
-import com.catface996.ai.api.param.ExpressOrderApiParam;
+import com.catface996.ai.api.express.ExpressThirdApi;
+import com.catface996.ai.api.express.model.ExpressOrderApiModel;
+import com.catface996.ai.api.express.param.ExpressOrderApiParam;
 import com.catface996.ai.domain.business.demo.convert.ExpressConvert;
 import com.catface996.ai.domain.business.demo.model.ExpressDoModel;
 import com.catface996.ai.domain.business.demo.param.ExpressOrderDoParam;
