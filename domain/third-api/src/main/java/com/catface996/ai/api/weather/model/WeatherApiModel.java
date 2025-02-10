@@ -1,5 +1,7 @@
 package com.catface996.ai.api.weather.model;
 
+import lombok.Data;
+
 /**
  * 天气信息模型
  * 用于封装天气相关的数据,包括城市和气温信息
@@ -7,6 +9,7 @@ package com.catface996.ai.api.weather.model;
  * @author catface996
  * @date 2025/02/07
  */
+@Data
 public class WeatherApiModel {
 
     /**
@@ -19,19 +22,11 @@ public class WeatherApiModel {
      */
     private Double temperature;
 
-    public String getCity() {
-        return city;
+    public static WeatherApiModel error(){
+        WeatherApiModel model = new WeatherApiModel();
+        model.setCity("error");
+        model.setTemperature(0.0);
+        return model;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Double getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Double temperature) {
-        this.temperature = temperature;
-    }
 }

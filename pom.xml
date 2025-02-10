@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.1</version>
+        <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.catface996.ai</groupId>
@@ -14,13 +14,7 @@
     <packaging>pom</packaging>
     <name>convert-api</name>
     <description>convert-api</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
+
     <modules>
 
         <module>app/app-demo</module>
@@ -50,15 +44,12 @@
 
         <!-- infra end -->
     </modules>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
     <properties>
-        <java.version>23</java.version>
-        <spring-cloud.version>2024.0.0</spring-cloud.version>
+        <java.version>21</java.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <spring-boot.version>3.2.2</spring-boot.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -121,10 +112,29 @@
             </dependency>
             <dependency>
                 <groupId>com.catface996.ai</groupId>
+                <artifactId>weather-api-impl</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.catface996.ai</groupId>
                 <artifactId>repository-mysql-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- infra end -->
+
+            <!-- tools begin -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.83</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version> <!-- 使用最新版本 -->
+                <scope>provided</scope>
+            </dependency>
+            <!-- tools end -->
 
 
             <!-- local modules end -->

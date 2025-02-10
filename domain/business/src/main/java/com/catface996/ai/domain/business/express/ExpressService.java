@@ -1,7 +1,7 @@
-package com.catface996.ai.domain.business.demo;
+package com.catface996.ai.domain.business.express;
 
-import com.catface996.ai.domain.business.demo.model.ExpressDoModel;
-import com.catface996.ai.domain.business.demo.param.ExpressOrderDoParam;
+import com.catface996.ai.domain.business.express.model.ExpressDoModel;
+import com.catface996.ai.domain.business.express.param.ExpressOrderDoParam;
 
 public interface ExpressService {
 

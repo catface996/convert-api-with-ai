@@ -1,4 +1,4 @@
-package com.catface996.ai.domain.business.demo.model;
+package com.catface996.ai.domain.business.express.model;
 
 import lombok.Data;
 

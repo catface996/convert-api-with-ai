@@ -1,4 +1,4 @@
-package com.catface996.ai.traffic.http.response;
+package com.catface996.ai.traffic.http.express.response;
 
 public class ExpressOrderResponse {
 

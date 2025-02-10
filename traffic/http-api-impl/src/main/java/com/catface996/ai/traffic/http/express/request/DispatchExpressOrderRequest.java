@@ -1,4 +1,4 @@
-package com.catface996.ai.traffic.http.request;
+package com.catface996.ai.traffic.http.express.request;
 
 public class DispatchExpressOrderRequest {
     private String senderName;

@@ -1,9 +1,9 @@
-package com.catface996.ai.traffic.http.convert;
+package com.catface996.ai.traffic.http.express.convert;
 
-import com.catface996.ai.domain.business.demo.model.ExpressDoModel;
-import com.catface996.ai.domain.business.demo.param.ExpressOrderDoParam;
-import com.catface996.ai.traffic.http.request.DispatchExpressOrderRequest;
-import com.catface996.ai.traffic.http.response.ExpressOrderResponse;
+import com.catface996.ai.domain.business.express.model.ExpressDoModel;
+import com.catface996.ai.domain.business.express.param.ExpressOrderDoParam;
+import com.catface996.ai.traffic.http.express.request.DispatchExpressOrderRequest;
+import com.catface996.ai.traffic.http.express.response.ExpressOrderResponse;
 
 public class ExpressConvert {
 
